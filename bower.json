@@ -1,0 +1,29 @@
+{
+  "name": "Laravel-pure",
+  "description": "Laravel 5.2 with Infyoim and Bootstrap Material Design bundled up by Elixir",
+  "main": "server.php",
+  "authors": [
+    "Gaudencio Teves"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "Laravel 5.2",
+    "Infyoim",
+    "Bootstrap",
+    "Material",
+    "Bootstrap",
+    "Elixir"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "material-design-icons": "^2.2.3"
+  }
+}
