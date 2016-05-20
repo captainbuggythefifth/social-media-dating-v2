@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 /*
 |--------------------------------------------------------------------------
@@ -27,22 +24,28 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+    Route::auth();
 
+    
+    Route::resource("characters", "CharacterController");
 
+    Route::get('characters/delete/{id}', [
+        'as' => 'characters.delete',
+        'uses' => 'CharacterController@destroy',
+    ]);
 });
 
 Route::group(['middleware' => 'web'], function () {
-    Route::auth();
-
+    
+    Route::get('/', 'HomeController@index');
     Route::get('/home', 'HomeController@index');
 
-    Route::resource("projects", "ProjectController");
+    /*Route::resource("projects", "ProjectController");
 
     Route::get('projects/delete/{id}', [
         'as' => 'projects.delete',
         'uses' => 'ProjectController@destroy',
-    ]);
+    ]);*/
 });
 
 
@@ -59,3 +62,5 @@ Route::group(['prefix' => 'api', 'namespace' => 'API'], function ()
         require config('infyom.laravel_generator.path.api_routes');
     });
 });
+
+

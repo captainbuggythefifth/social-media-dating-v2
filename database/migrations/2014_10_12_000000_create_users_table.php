@@ -20,9 +20,17 @@ class CreateUsersTable extends Migration
             $table->string('age');
             $table->date('birth_date');
             $table->integer('gender');
+
+            $table->char('user_name');
+            $table->char('avatar');
+            $table->integer('country_id')->unsigned()->nullable();
+            $table->integer('current_character_id')->unsigned()->nullable();
+            $table->integer('status');
+            $table->integer('wall_photo_id')->unsigned()->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
+        
     }
 
     /**

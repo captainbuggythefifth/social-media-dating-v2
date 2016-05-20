@@ -15,7 +15,7 @@
     {{--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">--}}
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
-    <link rel="stylesheet" href="{{ elixir("build/css/everything.css") }}">
+    <link rel="stylesheet" href="{{--{{ elixir("build/css/everything.css") }}--}}/build/css/everything.css">
 
     <style>
         body {
@@ -75,7 +75,6 @@
     </nav>
 
     @yield('content')
-
     <!-- JavaScripts -->
 
     {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

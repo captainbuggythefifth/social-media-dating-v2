@@ -14,3 +14,5 @@
 
 
 Route::resource("projects", "ProjectAPIController");
+
+Route::resource("characters", "CharacterAPIController");

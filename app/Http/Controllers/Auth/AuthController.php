@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Http\Requests\Request;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -55,6 +56,10 @@ class AuthController extends Controller
         ]);
     }
 
+    protected function authenticated(Request $request, User $user){
+        return redirect('loggedin');
+    }
+
     /**
      * Create a new user instance after a valid registration.
      *
@@ -63,6 +68,7 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
+        $this->redirectTo = '/character/create';
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
